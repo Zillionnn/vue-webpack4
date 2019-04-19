@@ -165,27 +165,27 @@ const webpackConfig = merge(baseWebpackConfig, {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           chunks: "all"
-        },
-        'element-ui': {
-          name: 'element-ui',
-          chunks: 'all',
-          // 对echarts进行单独优化，优先级较高
-          priority: 20,
-          test: function(module){
-              var context = module.context;
-              return context && (context.indexOf('element-ui') >= 0)
-          }
-        },
-        echarts: {
-          name: 'echarts',
-          chunks: 'all',
-          // 对echarts进行单独优化，优先级较高
-          priority: 20,
-          test: function(module){
-              var context = module.context;
-              return context && (context.indexOf('echarts') >= 0 || context.indexOf('zrender') >= 0)
-          }
         }
+        // 'element-ui': {
+        //   name: 'element-ui',
+        //   chunks: 'all',
+        //   // 对echarts进行单独优化，优先级较高
+        //   priority: 20,
+        //   test: function(module){
+        //       var context = module.context;
+        //       return context && (context.indexOf('element-ui') >= 0)
+        //   }
+        // }
+        // echarts: {
+        //   name: 'echarts',
+        //   chunks: 'all',
+        //   // 对echarts进行单独优化，优先级较高
+        //   priority: 20,
+        //   test: function(module){
+        //       var context = module.context;
+        //       return context && (context.indexOf('echarts') >= 0 || context.indexOf('zrender') >= 0)
+        //   }
+        // }
       }
     }
   }
