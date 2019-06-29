@@ -1,7 +1,7 @@
 {
-  "name": "hopen_frontend",
+  "name": "vue-webpack4",
   "version": "1.0.0",
-  "description": "hoperun frontend",
+  "description": "create vue with webpack4",
   "author": "HOPERUN",
   "private": true,
   "scripts": {
