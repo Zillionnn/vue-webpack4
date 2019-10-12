@@ -5,6 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 // 解决报错：vue-loader was used without the corresponding plugin. Make sure to include VueLoaderPlugin in your webpack config.
 const { VueLoaderPlugin } = require('vue-loader');
+require('babel-polyfill')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -24,7 +25,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: ['babel-polyfill', './src/main.js'],
   },
   output: {
     path: config.build.assetsRoot,
